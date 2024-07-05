@@ -1,0 +1,20 @@
+server{
+	listen 443 ssl;
+	
+	server_name projetadmin.fr www.projetadmin.fr;
+	
+	ssl_certificate /etc/nginx/ssl/projetadmin_fr/projetadmin.fr_ssl_certificate.cer;
+	ssl_certificate /etc/nginx/ssl/projetadmin_fr/_.projetadmin.fr_private_key.key;
+	ssl_trusted_certificate /etc/nginx/ssl/projetadmin_fr/_.projetadmin.fr_ssl_certificate_INTERMEDIATE.cer
+	
+	ssl_stapling on;
+	ssl_stapling_verify on;
+	
+	location /{
+		root/var/www/html;
+		index index.html index.php;
+	}
+	#Adminer configuration
+	location /adminer{
+		proxy_pass http://localhost:82;
+	}
