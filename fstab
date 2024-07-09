@@ -1,3 +1,0 @@
-# /etc/fstab: static file system information
-UUID=0bcbad84-23f8-485b-9d66-513bb480a5cb / ext4 rw,discard,errors=remount-ro,x-systemd.growfs 0 1
-UUID=DB24-2355 /boot/efi vfat defaults 0 0
